@@ -1,0 +1,477 @@
+/* 
+HTML5 Doctor Reset v1.6.1
+http://html5doctor.com/html-5-reset-stylesheet/
+CSSresetr
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+img {
+  display: block;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.subscription {
+  font-family: 'Museo Sans Cyrl 500';
+  max-width: 652px;
+  background: #EEEEEE;
+  -webkit-box-shadow: 8px 8px 0px #5700FF;
+          box-shadow: 8px 8px 0px #5700FF;
+  padding: 50px 20px 18px 62px;
+  margin-right: 8px;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 767px) {
+  .subscription {
+    padding: 28px 20px 16px 24px;
+  }
+}
+
+.subscription.invalid-email .subscription__input[type=email] {
+  border: 2px solid #FF0000;
+}
+
+.subscription.invalid-email .subscription__invalid-desc {
+  opacity: 1;
+}
+
+.subscription.successfully .subscription__inputs {
+  display: none;
+}
+
+.subscription.successfully .subscription__successfully {
+  display: block;
+}
+
+.subscription.sherlock {
+  background: url("../img/images/image.jpg") no-repeat 100% 50%/cover;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-right: 0;
+}
+
+@media (max-width: 480px) {
+  .subscription.sherlock {
+    background: url("../img/images/image-2.jpg") no-repeat 100% 50%/cover;
+  }
+}
+
+.subscription.sherlock .subscription__title {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.subscription.sherlock .subscription__desc {
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .subscription.sherlock .subscription__desc {
+    margin-bottom: 30px;
+  }
+}
+
+.subscription.sherlock .subscription__submit-desc {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .subscription.sherlock .subscription__submit-desc a {
+    color: #FFDC62;
+  }
+}
+
+.subscription.sherlock .subscription__input {
+  border: 2px solid #8145F4;
+}
+
+.subscription.sherlock .subscription__submit {
+  background: #8145F4;
+  border: 2px solid #8145F4;
+}
+
+.subscription.sherlock .subscription__submit:after {
+  border: 2px solid #8145F4;
+}
+
+/* new style */
+.subscription.sherlock .subscription__submit:disabled {
+  background: #c9c3d6;
+  border: 2px solid #c9c3d6;
+}
+
+.subscription.sherlock .subscription__submit:disabled::after {
+  border: 2px solid #c9c3d6;
+}
+/* new style */
+
+.subscription.sherlock .subscription__invalid-desc {
+  color: #FFDC62;
+}
+
+.subscription.sherlock .subscription__successfully {
+  color: #fff;
+}
+
+.subscription__title {
+  font-size: 30px;
+  line-height: 40px;
+  font-family: 'Museo Sans Cyrl 900';
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+@media (max-width: 767px) {
+  .subscription__title {
+    font-size: 26px;
+    line-height: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__title {
+    text-align: left;
+  }
+}
+
+.subscription__desc {
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 43px;
+  max-width: 570px;
+}
+
+@media (max-width: 767px) {
+  .subscription__desc {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__desc {
+    text-align: left;
+  }
+}
+
+.subscription__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .subscription__inputs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__inputs {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.subscription__input-wrap {
+  width: 181px;
+  margin-bottom: 8px;
+  margin-right: 6px;
+}
+
+/* new style */
+.subscription__input-wrap.error .subscription__input{
+  border: 2px solid #FF0000;
+}
+/* new style */
+
+@media (max-width: 767px) {
+  .subscription__input-wrap {
+    width: 100%;
+    max-width: 350px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__input-wrap {
+    max-width: 100%;
+  }
+}
+
+.subscription__input {
+  margin-right: 5px;
+  background: #FFFFFF;
+  border: 2px solid #5700FF;
+  padding: 0 17px;
+  height: 40px;
+  width: 100%;
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+}
+
+.subscription__input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.subscription__input::-moz-placeholder {
+  /* Firefox 19+ */
+  opacity: 1;
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.subscription__input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #000;
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.subscription__input:-moz-placeholder {
+  /* Firefox 18- */
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+
+.subscription__submit-wrap {
+  width: 156px;
+}
+
+@media (max-width: 767px) {
+  .subscription__submit-wrap {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription__submit-wrap {
+    max-width: 100%;
+  }
+}
+
+.subscription__submit {
+  position: relative;
+  background: #5700FF;
+  border: 2px solid #5700FF;
+  font-family: 'Museo Sans Cyrl 700';
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  height: 40px;
+  margin-right: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* new style */
+.subscription__submit:disabled {
+  background: #c9c3d6;
+  border: 2px solid #c9c3d6;
+  cursor: not-allowed;
+}
+
+.subscription__submit:disabled::after {
+  border: 2px solid #c9c3d6;
+}
+/* new style */
+
+.subscription__submit:hover:after {
+  right: -7px;
+  top: 3px;
+}
+
+.subscription__submit::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  right: -10px;
+  top: 7px;
+  border: 2px solid #5700FF;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.subscription__submit-desc {
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000;
+  text-align: center;
+  margin-top: 16px;
+}
+
+.subscription__submit-desc a {
+  color: inherit;
+}
+
+@media (max-width: 480px) {
+  .subscription__submit-desc a {
+    color: #8145F4;
+  }
+}
+
+.subscription__invalid-desc {
+  font-family: 'Museo Sans Cyrl 300';
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  color: #FF0000;
+  padding-top: 10px;
+  opacity: 0;
+}
+
+@media (max-width: 767px) {
+  .subscription__invalid-desc {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .subscription__invalid-desc br {
+    display: none;
+  }
+}
+
+.subscription__successfully {
+  font-family: 'Museo Sans Cyrl 500';
+  font-weight: 500;
+  display: none;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  margin: 62px 0;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */

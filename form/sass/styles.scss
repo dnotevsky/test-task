@@ -1,0 +1,302 @@
+
+@import "_reset";
+
+
+.subscription {
+	font-family: 'Museo Sans Cyrl 500';
+	max-width: 652px;
+	background: #EEEEEE;
+	box-shadow: 8px 8px 0px #5700FF;
+	padding: 50px 20px 18px 62px;
+	margin-right: 8px;
+	margin-bottom: 25px;
+
+	@media (max-width: 767px) {
+		padding: 28px 20px 16px 24px;
+	}
+
+	&.invalid-email {
+		.subscription__input[type=email] {
+			border: 2px solid #FF0000;
+		}
+		.subscription__invalid-desc {
+			opacity: 1;
+		}
+	}
+
+	&.successfully {
+		.subscription__inputs {
+			display: none;
+		}
+
+		.subscription__successfully {
+			display: block;
+		}
+	}
+
+	&.sherlock {
+		background: url("../img/images/image.jpg") no-repeat 100% 50%  / cover;
+		box-shadow: none;
+		margin-right: 0;
+
+		@media (max-width: 480px) {
+			background: url("../img/images/image-2.jpg") no-repeat 100% 50%  / cover;
+		}
+
+		.subscription {
+			&__title {
+				color: #fff;
+				margin-bottom: 20px;
+			}
+
+			&__desc {
+				color: #fff;
+
+				@media (max-width: 767px) {
+					margin-bottom: 30px;
+				}
+			}
+			&__submit-desc {
+				color: #fff;
+
+				a {
+					@media (max-width: 480px) {
+						color: #FFDC62;
+					}
+				}
+
+			}
+
+			&__input {
+				border: 2px solid #8145F4;
+			}
+
+			&__submit {
+				background: #8145F4;
+				border: 2px solid #8145F4;
+
+				&:after {
+					border: 2px solid #8145F4;
+				}
+			}
+
+			&__invalid-desc {
+				color: #FFDC62;
+			}
+
+			&__successfully {
+				color: #fff;
+			}
+		}
+
+		
+	}
+
+	&__title {
+		font-size: 30px;
+		line-height: 40px;
+		font-family: 'Museo Sans Cyrl 900';
+		font-weight: bold;
+		margin-bottom: 9px;
+
+		@media (max-width: 767px) {
+			font-size: 26px;
+			line-height: 32px;
+			text-align: center;
+		}
+
+		@media (max-width: 480px) {
+			text-align: left;
+		}
+	}
+
+	&__desc {
+		font-family: 'Museo Sans Cyrl 300';
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 32px;
+		margin-bottom: 43px;
+		max-width: 570px;
+
+		@media (max-width: 767px) {
+			font-size: 18px;
+			line-height: 24px;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+
+		@media (max-width: 480px) {
+			text-align: left;
+		}
+	}
+
+	&__inputs {
+		display: flex;
+
+		@media (max-width: 767px) {
+			flex-flow: column;
+			align-items: center;
+		}
+
+		@media (max-width:480px) {
+			align-items: flex-start;
+		}
+	}
+
+	&__input-wrap {
+		width: 181px;
+		margin-bottom: 8px;
+		margin-right: 6px;
+
+		@media (max-width: 767px) {
+			width: 100%;
+			max-width: 350px;
+			margin-right: 0;
+		}
+
+		@media (max-width: 480px) {
+			max-width: 100%;
+		}
+	}
+
+	&__input {
+		margin-right: 5px;
+		background: #FFFFFF;
+		border: 2px solid #5700FF;
+		padding: 0 17px;
+		height: 40px;
+		width: 100%;
+		font-family: 'Museo Sans Cyrl 300';
+		font-weight: 300;
+		font-size: 14px;
+		color: #000;
+		outline: none;
+
+		&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+			font-family: 'Museo Sans Cyrl 300';
+			font-weight: 300;
+			font-size: 14px;
+			color: #000;
+		}
+		&::-moz-placeholder { /* Firefox 19+ */
+		  opacity: 1;
+		  font-family: 'Museo Sans Cyrl 300';
+			font-weight: 300;
+			font-size: 14px;
+			color: #000;
+		}
+
+		&:-ms-input-placeholder { /* IE 10+ */
+		  color: #000;
+		  font-family: 'Museo Sans Cyrl 300';
+			font-weight: 300;
+			font-size: 14px;
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+			font-family: 'Museo Sans Cyrl 300';
+			font-weight: 300;
+			font-size: 14px;
+			color: #000;
+		}
+
+	}
+
+	&__submit-wrap {
+		width: 156px;
+
+		@media (max-width: 767px) {
+			width: 100%;
+			max-width: 350px;
+		}
+
+		@media (max-width: 480px) {
+			max-width: 100%;
+		}
+	}
+
+	&__submit {
+		position: relative;
+		background: #5700FF;
+		border: 2px solid #5700FF;
+		font-family: 'Museo Sans Cyrl 700';
+		font-weight: 700;
+		font-size: 14px;
+		color: #fff;
+		height: 40px;
+		margin-right: 10px;
+		width: 100%;
+		cursor: pointer;
+
+		&:hover {
+			&:after {
+				right: -7px;
+				top: 3px;
+			}
+
+		}
+
+		&::after {
+			content: "";
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			right: -10px;
+			top: 7px;
+			border: 2px solid #5700FF;
+			transition: all .3s ease;
+		}
+	}
+
+	&__submit-desc {
+		font-family: 'Museo Sans Cyrl 300';
+		font-weight: 300;
+		font-size: 10px;
+		line-height: 12px;
+		color: #000;
+		text-align: center;
+		margin-top: 16px;
+
+		a {
+			color: inherit;
+
+			@media (max-width: 480px) {
+				color: #8145F4;
+			}
+			
+		}
+	}
+
+	&__invalid-desc {
+		font-family: 'Museo Sans Cyrl 300';
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 12px;
+		text-align: center;
+		color: #FF0000;
+		padding-top: 10px;
+		opacity: 0;
+
+		@media (max-width: 767px) {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			
+			br {
+				display: none;
+			}
+		}
+
+	}
+
+	&__successfully {
+		font-family: 'Museo Sans Cyrl 500';
+		font-weight: 500;
+		display: none;
+		font-size: 24px;
+		line-height: 32px;
+		color: #000000;
+		margin: 62px 0;
+		text-align: center;
+		
+	}
+}
