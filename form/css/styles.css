@@ -450,7 +450,7 @@ img {
   text-align: center;
   color: #FF0000;
   padding-top: 10px;
-  opacity: 0;
+  /* opacity: 0; */
 }
 
 @media (max-width: 767px) {

@@ -1,4 +1,4 @@
-var form = $('.subscription')
+var form = $('.subscription');
 
 form.on('submit', function(e) {
   e.preventDefault();
@@ -6,10 +6,10 @@ form.on('submit', function(e) {
   var currentForm = $(this);
   var fields = currentForm.find('.subscription__input');
   var submitBtn = currentForm.find('.subscription__submit');
-  var isErrors = validateFields(currentForm, fields);
+  var isErrors = validateFields(fields);
 
-  if(Object.keys(isErrors).length === 0 ) {
-    cleanField(currentForm, fields);
+  if(checkErrors(isErrors, submitBtn)) {
+    cleanField(fields);
     submitBtn.attr('disabled', 'disabled');
     submitBtn.text('Отправляем...');
 
@@ -18,7 +18,7 @@ form.on('submit', function(e) {
     jqxhr.done(function() {
       submitBtn.removeAttr('disabled');
       submitBtn.text('Подписаться');
-      form.addClass('successfully');
+      currentForm.addClass('successfully');
     })
     .fail(function(xhr, status, error) {
       // error handle
@@ -26,56 +26,73 @@ form.on('submit', function(e) {
       submitBtn.text('Подписаться');
       console.log(error);
     });
-    /*
-    setTimeout(function() {
-      submitBtn.removeAttr('disabled');
-      submitBtn.text('Подписаться')
-      form.addClass('successfully');
-    }, 2000)*/
+    // setTimeout(function() {
+    //   // submit form
+    //   submitBtn.removeAttr('disabled');
+    //   submitBtn.text('Подписаться')
+    //   currentForm.addClass('successfully');
+    // }, 2000)
   } else {
-    submitBtn.attr('disabled', 'disabled');
+    errorHandle(fields, isErrors);
+    checkErrors(isErrors, submitBtn);
   }
 
   fields.on('input', function() {
-    isErrors = validateFields(currentForm, fields);
-    $(this).parent().removeClass('error');
-
-    if(!isErrors.user_email) {
-      currentForm.removeClass('invalid-email');
-    }
-
-    if(Object.keys(isErrors).length === 0 ) {
-      submitBtn.removeAttr('disabled');
-    }
+    isErrors = validateFields(fields);
+    errorHandle(fields, isErrors);
+    checkErrors(isErrors, submitBtn);
   })
 })
 
-function validateFields(ctx, fields) {
-  var errors = {}
+function errorHandle(fields, errors) {
+  fields.each(function(_, el) {
+    if(errors[el.name].length > 0) {
+      $(el).parent().find('.subscription__invalid-desc').text(errors[el.name]);
+      $(this).parent().addClass('error');
+    } else {
+      $(el).parent().find('.subscription__invalid-desc').text(errors[el.name]);
+      $(this).parent().removeClass('error');
+    }
+  })
+}
+
+function checkErrors(errors, button) {
+  var errorStatus = false;
+  for (var error in errors) {
+    if(errors[error].length > 0) {
+      button.attr('disabled', 'disabled');
+      return errorStatus = false;
+    } else {
+      button.removeAttr('disabled');
+      errorStatus = true;
+    }
+  }
+
+  return errorStatus;
+}
+
+function validateFields(fields) {
+  var errors = {};
   fields.each(function(_, el) {
     if(el.value.length > 0) {
-      $(el).parent().removeClass('error');
+      var errorName = el.name;
+      errors[errorName] = '';
     } else {
       var errorName = el.name;
       errors[errorName] = 'Поле должно быть заполнено';
-      ctx.removeClass('invalid-email');
-      $(el).parent().addClass('error');
       return;
     }
 
     if(el.name === 'user_email' && !validateEmail(el.value)) {
       var errorName = el.name;
       errors[errorName] = 'Кажется, вы ввели несуществующий email';
-      ctx.addClass('invalid-email');
-      $(el).parent().addClass('error');
     }
   })
 
-  return errors
+  return errors;
 }
 
-function cleanField(ctx, fields) {
-  ctx.removeClass('invalid-email');
+function cleanField(fields) {
   fields.each(function(_, el) {
     $(el).parent().removeClass('error');
   })

@@ -8,27 +8,25 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <form action="" class="subscription" novalidate>
+    <form action="" class="subscription" novalidate >
       <!-- add .invalid-email or .successfully-->
       <h2 class="subscription__title">Учите английский для деловой переписки. Это бесплатно</h2>
       <p class="subscription__desc">Email-курс о том, как эффективно общаться с коллегами и партнерами</p>
       <div class="subscription__inputs">
         <div class="subscription__input-wrap">
           <input class="subscription__input" name="user_name" type="text" placeholder="Ваше имя" />
+          <p class="subscription__invalid-desc"></p>
         </div>
         <div class="subscription__input-wrap">
           <input class="subscription__input" name="user_email" type="email" placeholder="Email" />
-          <p class="subscription__invalid-desc">
-            Кажется, вы ввели <br />
-            несуществующий email
-          </p>
+          <p class="subscription__invalid-desc"></p>
         </div>
         <div class="subscription__submit-wrap">
           <button class="subscription__submit" type="submit">Подписаться</button>
           <p class="subscription__submit-desc">Нажимая, я принимаю <br />условия <a href="#">соглашения</a></p>
         </div>
       </div>
-      <p class="subscription__successfully">Поздравляем, с подпиской на курс. <br />Успехов в учебе! :)</p>
+      <p class="subscription__successfully"><span>Поздравляем,</span> с подпиской на курс. <br />Успехов в учебе! :)</p>
     </form>
 
     <form action="" class="subscription sherlock" novalidate>
@@ -38,20 +36,18 @@
       <div class="subscription__inputs">
         <div class="subscription__input-wrap">
           <input class="subscription__input" name="user_name" type="text" placeholder="Ваше имя" />
+          <p class="subscription__invalid-desc"></p>
         </div>
         <div class="subscription__input-wrap">
           <input class="subscription__input" name="user_email" type="email" placeholder="Email" />
-          <p class="subscription__invalid-desc">
-            Кажется, вы ввели <br />
-            несуществующий email
-          </p>
+          <p class="subscription__invalid-desc"></p>
         </div>
         <div class="subscription__submit-wrap">
-          <button class="subscription__submit" type="submit">Подписаться</button>
+          <button class="subscription__submit" type="submit" >Подписаться</button>
           <p class="subscription__submit-desc">Нажимая, я принимаю <br />условия <a href="#">соглашения</a></p>
         </div>
       </div>
-      <p class="subscription__successfully">Поздравляем, с подпиской на курс. <br />Успехов в учебе! :)</p>
+      <p class="subscription__successfully"><span>Поздравляем,</span> с подпиской на курс. <br />Успехов в учебе! :)</p>
     </form>
 
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
